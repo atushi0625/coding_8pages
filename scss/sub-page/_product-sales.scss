@@ -1,0 +1,95 @@
+@use '../global/responsive'as r;
+
+
+.product-lists {
+     margin-top: 5.3125rem;
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     grid-template-rows: repeat(3, 1fr);
+     gap: 23px;
+     place-items: center;
+     row-gap: 34px;
+
+     @include r.pc {
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+     }
+
+     @include r.tab {
+          margin-top: 3.3125rem;
+     }
+
+
+     &__list {
+          position: relative;
+          width: 100%;
+          max-width: 18.5625rem;
+          height: 27.5rem;
+          background-color: #fff;
+          border-bottom: 8.4px solid #c5a76c;
+
+          @include r.pc {
+               height: 28.5rem;
+          }
+     }
+
+     &__body {
+          position: absolute;
+          bottom: 1.5rem;
+          left: 1.625rem;
+
+          p {
+               font-size: 1.125rem;
+               font-weight: bold;
+               line-height: 1.2;
+
+               @include r.sp {
+                    font-size: 1rem;
+               }
+          }
+
+          span {
+               margin-top: 1rem;
+               display: inline-block;
+               font-size: 1.0625rem;
+               font-weight: bold;
+
+               @include r.sp {
+                    font-size: 0.9375rem;
+               }
+          }
+     }
+
+     .product-btn {
+          width: 15.875rem;
+          margin-top: 1.5625rem;
+          background-color: #c5a76c;
+          text-align: center;
+
+          @include r.pc {
+               width: 11.875rem;
+          }
+
+          @include r.tab {
+               width: 9.875rem;
+          }
+
+          a {
+               font-size: 1.125rem;
+               color: #fff;
+               line-height: 1.4;
+
+               @include r.sp {
+                    font-size: 1rem;
+               }
+          }
+     }
+
+     &__img {
+          width: 100%;
+
+          img {
+               height: 100%;
+          }
+     }
+}

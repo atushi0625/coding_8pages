@@ -1,0 +1,295 @@
+@use '../global/responsive'as r;
+
+
+.header {
+
+     &__container {
+          padding: 0 2.125rem;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 100;
+
+          transition: .3s;
+
+          @include r.pc {
+               padding: 0 1.88281vw;
+          }
+
+          @include r.tab {
+               background-color: #000;
+               padding: 0.625rem 0.75rem 0.3rem;
+               border-bottom: #C5A76C 2.9px solid;
+          }
+     }
+
+     &__inner {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+     }
+
+     &__logo {
+          width: 6.5625rem;
+
+          img {
+               height: 100%;
+          }
+
+          @include r.tab {
+               width: 5.25rem;
+          }
+
+          @include r.sp {
+               width: 4.25rem;
+          }
+     }
+
+     &__icon {
+          display: flex;
+          align-items: center;
+
+          .insta-icon {
+               @include r.tab {
+                    width: 3rem;
+                    height: 3rem;
+
+               }
+
+               @include r.sp {
+                    width: 2.0625rem;
+                    height: 2.0625rem;
+
+               }
+          }
+
+          .fbk-icon {
+               margin-left: 1.875rem;
+
+               @include r.pc {
+                    margin-left: 1.5vw;
+               }
+
+               @include r.tab {
+                    margin-left: 1rem;
+                    width: 3rem;
+                    height: 3rem;
+               }
+
+               @include r.sp {
+                    margin-left: 0.75rem;
+                    width: 2.0625rem;
+                    height: 2.0625rem;
+
+               }
+          }
+     }
+}
+
+/*pcサイズヘッダーメニュー*/
+.header-menu {
+     border-top: #C5A76C 3px solid;
+     transition: .3s;
+
+
+
+     @include r.tab {
+          display: none;
+
+     }
+
+     &__lists {
+          display: flex;
+          text-align: center;
+
+     }
+
+     &__list {
+          cursor: pointer;
+          padding: 3.75rem 0 2.25rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 9rem;
+          background-color: #000;
+          border-right: 1px solid #fff;
+
+          @include r.pc {
+               width: 10vw;
+               padding: 3vw 0 2vw;
+          }
+
+          &:nth-child(2) {
+               position: relative;
+
+               &:hover {
+                    transition: .2s;
+                    background-color: #707070;
+               }
+          }
+
+          &:last-child {
+               border-right: none;
+
+          }
+
+          a {
+               color: #fff;
+               font-size: 1.25rem;
+               font-weight: bold;
+
+               @include r.pc {
+                    font-size: 1.6vw;
+               }
+
+               span {
+                    color: #C5A76C;
+                    font-weight: 600;
+                    margin-top: 1.875rem;
+                    text-transform: uppercase;
+                    font-size: 0.9375rem;
+                    display: block;
+
+                    @include r.pc {
+                         font-size: 1.2vw;
+                    }
+
+               }
+          }
+     }
+
+     .select-color {
+          background-color: #3E3A39;
+     }
+}
+
+/*hoverしたら現れるメニュー*/
+.header-sub-menu {
+     visibility: hidden;
+     opacity: 0;
+     text-align: center;
+     background-color: #707070;
+     position: absolute;
+     top: 50%;
+     left: 0%;
+     transition: .1s; //この設定でブレイクポイント時、一瞬の色映りが消える
+
+
+     &__list {
+          width: 9rem;
+          padding: 2.25rem 0 2.25rem;
+          border: 1px solid #fff;
+
+
+          @include r.pc {
+               width: 10vw;
+               padding: 2vw 0 2vw;
+          }
+
+          a {
+               display: block;
+               font-size: 0.9375rem;
+
+          }
+
+     }
+}
+
+/*スマホバージョンメニュー*/
+.header-menu-sp {
+     display: none;
+     position: fixed;
+     z-index: 100;
+     top: 0;
+     left: 0;
+     overflow: hidden;
+     overflow-y: auto;
+     background-color: rgba(0, 0, 0, .8);
+     width: 100vw;
+     height: 100vh;
+     transition: opacity .4s ease; //この設定でブレイクポイント時、一瞬の色映りが消える
+
+
+
+     &__lists {
+          width: calc(100% - 2.5625rem);
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+     }
+
+     &__list {
+          width: 100%;
+          padding-top: 1.125rem;
+
+          &:nth-child(1) {
+               padding-top: 0;
+          }
+
+          a {
+               display: grid;
+               grid-template-columns: 9.25rem 4rem 8.4375rem;
+               color: #fff;
+               font-weight: bold;
+               font-size: 1rem;
+
+               p {
+                    text-transform: uppercase;
+               }
+
+               span {
+                    margin-top: 5px;
+                    display: inline-block;
+                    width: 15px;
+                    height: 2px;
+                    background-color: #fff;
+
+               }
+          }
+     }
+
+}
+
+
+/*今開いてるページに色がつく*/
+body .header-menu-sp .select-color-sp {
+     color: #c5a76c;
+}
+
+
+/*ハンバーガーアイコンがクリックされたらメニュー表示*/
+.open.header-menu-sp {
+     display: block;
+}
+
+/*会社案内にhoverしたら発火*/
+.open-submenu {
+     top: 100%;
+     transition: .4s; //この設定でブレイクポイント時、一瞬の色映りが消える
+     opacity: 1;
+     visibility: visible;
+}
+
+/*ヘッダーの背景色がスクロールすると変わる*/
+.header__container.active {
+     transition: ease-in-out .4s;
+     border-top: #C5A76C 3px solid;
+     background-color: #000;
+
+     @include r.tab {
+          transition: none;
+          border-top: none;
+          background-color: #000;
+
+     }
+}
+
+.header-menu.boder-none {
+     border-top: none;
+
+     // border-right: 1px solid #fff;
+     // border-left: 1px solid #fff;
+}

@@ -1,0 +1,143 @@
+@use '../global/responsive'as r;
+
+
+.company-profile {
+
+     &__container {
+          background-color: #dbdcdc;
+          padding-bottom: 11.25rem;
+
+          @include r.tab {
+               padding-bottom: 6rem;
+          }
+     }
+
+     &__img {
+          margin-top: 4.6875rem;
+
+          img {
+               height: 100%;
+          }
+
+          @include r.tab {
+               margin-top: 2.625rem;
+               height: 20.625rem;
+          }
+     }
+
+     &__inner {
+          width: 100%;
+          max-width: 78.125rem;
+          margin: 0 auto;
+          background-color: #fff;
+          position: relative;
+          top: -4.6875rem;
+          left: 0;
+          border-top: #c5a76c solid 4.1px;
+
+          @include r.tab {
+               max-width: 28.3125rem;
+          }
+     }
+
+     /*会社概要*/
+     &__address {
+          width: 64%;
+          margin: 0 auto;
+          padding: 4.625rem 0 4.4375rem;
+
+          @include r.tab {
+               padding: 1.875rem 0 2.6875rem;
+               width: 94.3%;
+          }
+     }
+
+
+     table {
+          width: 100%;
+     }
+
+     tr {
+          color: #3e3a39;
+          font-size: 1rem;
+          border: solid 2px #9fa0a0;
+
+          @include r.pc {
+               font-size: 1.5625vw;
+          }
+
+          @include r.tab {
+               font-size: 0.78125rem;
+          }
+
+     }
+
+     th {
+          background-color: #efefef;
+          padding: 1.4375rem 1.375rem 1.375rem 3.9125rem;
+          font-weight: 500;
+          vertical-align: middle;
+
+          @include r.pc {
+               padding-left: 1rem;
+               padding-right: 1rem;
+          }
+
+          @include r.tab {
+               padding: 1.125rem 0 0.875rem 2.9375rem;
+          }
+     }
+
+     td {
+          font-weight: 500;
+          padding: 1.4375rem 3.125rem 1.375rem;
+          vertical-align: middle;
+
+          @include r.pc {
+               padding-left: 1.125rem;
+               padding-right: 1.125rem;
+          }
+
+          br {
+               display: none;
+          }
+
+          @include r.tab {
+               padding: 1.125rem 0 0.875rem 1.2813rem;
+               line-height: 1.2;
+
+               br {
+                    display: block;
+               }
+          }
+
+          span {
+               @include r.tab {
+                    display: none;
+               }
+          }
+     }
+
+     /*Googleマップ*/
+     &__map {
+          margin-top: 2.25rem;
+          position: relative;
+          width: 100%;
+          height: 0;
+          padding-top: 75%;
+          /* 比率を4:3に固定 */
+
+          @include r.tab {
+               margin-top: 1.5625rem;
+          }
+
+          iframe {
+               position: absolute;
+               top: 0;
+               left: 0;
+               width: 100%;
+               height: 100%;
+          }
+     }
+
+}

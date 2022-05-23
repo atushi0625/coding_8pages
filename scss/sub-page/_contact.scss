@@ -1,0 +1,208 @@
+@use '../global/responsive'as r;
+
+
+
+.contact-form {
+
+     &__container {
+          background-color: #dbdcdc;
+          padding: 9rem 1.25rem;
+
+          @include r.tab {
+               padding-top: 3.875rem;
+               padding-bottom: 7.5rem;
+
+          }
+     }
+
+     &__inner {
+          width: 100%;
+          max-width: 78.125rem;
+          margin: 6.5rem auto 0;
+          background-color: #fff;
+
+          @include r.tab {
+               margin-top: 2.5rem;
+          }
+     }
+
+
+     &__form {
+          padding: 4.4125rem 9.125rem 11.1875rem;
+
+          @include r.pc {
+               padding-left: calc(25% - 9.125rem);
+               padding-right: calc(25% - 9.125rem);
+
+          }
+
+          @include r.tab {
+               padding: 2.4125rem 1.125rem 3.1875rem;
+          }
+
+     }
+
+
+}
+
+.contact-table {
+     width: 100%;
+
+     tr {
+          @include r.tab {
+               display: flex;
+               flex-direction: column;
+
+          }
+     }
+
+     th,
+     td {
+          border: solid 2px #9fa0a0;
+          padding: 1.25rem;
+
+          @include r.tab {
+               border: none;
+               padding: 1rem 0;
+          }
+     }
+
+     th {
+          width: 17rem;
+          text-align: center;
+          color: #3e3a39;
+          background-color: rgba(197, 167, 108, .3);
+          font-size: 1.125rem;
+
+          @include r.tab {
+               width: 14rem;
+          }
+
+          @include r.sp {
+               font-size: 1rem;
+               width: 12rem;
+          }
+
+          span {
+               vertical-align: 1px;
+               margin-left: 0.875rem;
+               padding: 4px;
+               display: inline-block;
+               background-color: #e60012;
+               font-size: 0.9375rem;
+               color: #fff;
+
+               @include r.sp {
+                    font-size: 0.8125rem;
+               }
+          }
+     }
+
+     td {
+          background-color: #fff;
+
+          br {
+               display: none;
+          }
+
+          span {
+               font-size: 1rem;
+               color: #9fa0a0;
+
+               @include r.tab {
+                    margin-top: 10px;
+                    font-size: 0.875rem;
+                    display: inline-block;
+               }
+          }
+
+     }
+
+     .form-text {
+          width: 100%;
+          height: 2.75rem;
+          max-width: 39.625rem;
+          border-radius: 5px;
+          border: 1px solid #9fa0a0;
+
+     }
+
+     .post-code {
+          margin-left: 8.6px;
+          max-width: 9.8125rem;
+     }
+
+     .address {
+          margin-top: 10px;
+
+          @include r.tab {
+               // margin-top: 1.30208vw;
+          }
+     }
+
+     .form-tel {
+          width: 100%;
+          height: 2.75rem;
+          max-width: 25.875rem;
+          border-radius: 5px;
+          border: 1px solid #9fa0a0;
+
+          @include r.tab {
+               max-width: 15.875rem;
+               // height: 5.72916vw;
+               // max-width: 53.90625vw;
+          }
+
+     }
+
+     .form-email {
+          width: 100%;
+          height: 2.75rem;
+          max-width: 35.625rem;
+          border-radius: 5px;
+          border: 1px solid #9fa0a0;
+
+          @include r.tab {
+               max-width: 24.625rem;
+          }
+
+     }
+
+     .form-textarea {
+          width: 100%;
+          height: 12rem;
+          max-width: 39.625rem;
+          border-radius: 5px;
+          border: 1px solid #9fa0a0;
+
+     }
+
+
+}
+
+.contact-submit {
+     text-align: center;
+}
+
+input[type="submit"] {
+     width: 15.25rem;
+     padding: 1.7188rem 0;
+     margin-top: 4.40625rem;
+     background-color: #3e3a39;
+     color: #fff;
+     font-size: 1.625rem;
+     font-weight: 500;
+
+     @include r.tab {
+          padding: 1.5rem 0;
+          width: 12.5rem;
+          font-size: 1.5rem;
+          margin-top: 2.40625rem;
+     }
+
+     @include r.sp {
+          width: 10rem;
+          font-size: 1.4375rem;
+     }
+
+}

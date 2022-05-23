@@ -1,0 +1,63 @@
+@use '../global/responsive'as r;
+
+/*フッターのお問い合わせボタン*/
+.contact-btn {
+     margin-top: 1.9rem;
+     background-color: #fff;
+     width: 10.625rem;
+     height: 2.8125rem;
+     text-align: center;
+     padding: 0.875rem 0;
+
+     @include r.tab {
+          margin-top: 2.25rem;
+     }
+
+     &::before {
+          vertical-align: -3px;
+          content: url('../img/contact-icon.png');
+          margin-right: 5px;
+     }
+
+     a {
+          display: inline-block;
+
+          span {
+               font-weight: 500;
+               color: #000;
+               font-size: 1.125rem;
+          }
+     }
+
+}
+
+/*製品販売ページの「製品一覧へ戻る」ボタン*/
+.product-list-btn {
+     margin: 7.3125rem auto 0;
+     max-width: 29.5rem;
+     width: 100%;
+
+     @include r.tab {
+          margin-top: 3.3125rem;
+     }
+
+     a {
+          display: block;
+          text-align: center;
+          background-color: #c5a76c;
+          color: #fff;
+          font-size: 2.375rem;
+          line-height: 1.6;
+
+          @include r.tab {
+               font-size: 2rem;
+
+          }
+
+          @include r.sp {
+               font-size: 1.875rem;
+
+          }
+
+     }
+}

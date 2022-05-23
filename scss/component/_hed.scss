@@ -1,0 +1,65 @@
+@use '../global/responsive'as r;
+
+
+/*トップページ見出し*/
+.section-hed {
+     text-align: center;
+
+     h2 {
+          font-size: 2.8125rem;
+          text-transform: uppercase;
+          color: #C5A76C;
+          line-height: 1.2;
+          font-weight: bold;
+
+          @include r.tab {
+               font-size: 2.1875rem;
+          }
+
+
+     }
+
+     /*下層ページ見出し*/
+
+     .company-section-hed {
+          color: #000;
+
+          @include r.tab {
+               font-size: 1.875rem;
+          }
+
+          @include r.sp {
+               font-size: 1.625rem;
+          }
+     }
+
+     .section-line {
+          text-align: center;
+          display: inline-block;
+          width: 7.125rem;
+
+          @include r.tab {
+               width: 6.4375rem;
+          }
+
+     }
+
+
+     /*下層ページサブ見出し*/
+
+     .company-section-sub {
+          display: block;
+          font-weight: 600;
+          color: #000;
+          font-size: 1.5625rem;
+          line-height: 2.5;
+
+          @include r.tab {
+               font-size: 1.125rem;
+          }
+
+          @include r.sp {
+               font-size: 1rem;
+          }
+     }
+}

@@ -1,0 +1,59 @@
+@use '../global/responsive'as r;
+
+
+
+.about-us {
+
+     &__container {
+          padding: 7.5rem 1.25rem 10.75rem;
+          width: 100%;
+
+          @include r.tab {
+               padding: 4.3125rem 2.5rem 7.3125rem;
+          }
+
+          @include r.sp {
+               padding-left: 1.25rem;
+               padding-right: 1.25rem;
+          }
+     }
+
+     &__inner {
+          max-width: 50rem;
+          width: 100%;
+          margin: 0 auto;
+
+     }
+
+     &__body {
+
+          margin-top: 5rem;
+
+
+          p {
+               color: #fff;
+               font-size: 1.25rem;
+               line-height: 2;
+
+               @include r.tab {
+                    font-size: 1.125rem;
+               }
+
+               @include r.sp {
+                    font-size: 1rem;
+               }
+          }
+     }
+
+     &__body-title {
+          color: #fff;
+          font-size: 1.875rem;
+          line-height: 3;
+
+          @include r.tab {
+               text-align: center;
+               font-size: 1.25rem;
+          }
+
+     }
+}

@@ -1,0 +1,150 @@
+@use '../global/responsive'as r;
+
+
+
+.order-flow {
+     &__container {
+          background-color: #dbdcdc;
+          padding: 8.6875rem 1.25rem 10.0625rem;
+
+
+          @include r.tab {
+               padding-top: 3.875rem;
+               padding-bottom: 7.5rem;
+          }
+
+     }
+
+     &__inner {
+          width: 100%;
+          max-width: 78.125rem;
+          margin: 0 auto;
+     }
+
+     &__lists {
+          text-align: center;
+
+     }
+
+     .down-arrow {
+          margin-top: 1.3125rem;
+          display: inline-block;
+          max-width: 21.4375rem;
+          width: 100%;
+
+          @include r.sp {
+               max-width: 14.4375rem;
+          }
+     }
+
+     &__list {
+          margin-top: 1.3125rem;
+          display: flex;
+          align-items: center;
+          padding: 2.90625rem 10.25rem 2.90625rem 1.25rem;
+          width: 100%;
+          background-color: #fff;
+
+          &:first-child {
+               margin-top: 0;
+          }
+
+          @include r.tab {
+               padding: 2.5rem;
+               flex-direction: column;
+               justify-content: center;
+               padding: 1.75rem;
+          }
+     }
+
+     &__number {
+          text-align: left;
+          display: inline-block;
+          font-size: 8.1875rem;
+          color: #c5a76c;
+          opacity: 0.3;
+          font-weight: bold;
+
+          @include r.sp {
+               font-size: 7rem;
+          }
+     }
+
+     &__menu {
+          flex: 1;
+     }
+
+
+     &__title {
+          display: inline-block;
+          width: 100%;
+          max-width: 29.5rem;
+          text-align: center;
+          background-color: #c5a76c;
+          color: #fff;
+          font-size: 2.375rem;
+          line-height: 1.5;
+
+          @include r.tab {
+               margin-top: 2rem;
+               font-size: 2rem;
+          }
+
+          @include r.sp {
+               font-size: 1.625rem;
+          }
+     }
+
+
+     &__text {
+          margin-top: 2.8125rem;
+          font-size: 1.25rem;
+          color: #3e3a39;
+          line-height: 2.05;
+
+          @include r.tab {
+               text-align: justify;
+               margin-top: 2rem;
+               font-size: 1.125rem;
+          }
+
+          @include r.sp {
+               font-size: 0.875rem;
+          }
+
+     }
+
+     .contact-menu {
+          margin-top: 1.3125rem;
+          display: flex;
+          justify-content: center;
+
+          &__list {
+               color: #3e3a39;
+               margin-left: 1.3125rem;
+               font-size: 1.25rem;
+
+               @include r.tab {
+                    font-size: 1.125rem;
+               }
+
+               @include r.sp {
+                    font-size: 0.875rem;
+                    // width: 19.5rem;
+               }
+
+
+
+               &:first-child {
+                    margin-left: 0;
+               }
+
+               &::before {
+                    content: "●";
+                    color: #c5a76c;
+               }
+          }
+     }
+
+
+}

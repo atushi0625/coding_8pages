@@ -1,0 +1,105 @@
+@use '../global/responsive'as r;
+
+
+.processing-lists {
+     margin-top: 5.3125rem;
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     grid-template-rows: repeat(2, 1fr);
+     place-items: center;
+     gap: 31px;
+     row-gap: 49px;
+
+     @include r.pc {
+          grid-template-columns: repeat(2, 1fr);
+     }
+
+     @include r.tab {
+          margin-top: 2.3125rem;
+          grid-template-columns: 1fr;
+
+     }
+
+     &__list {
+          width: 100%;
+          max-width: 24.8125rem;
+          background-color: #fff;
+          border-bottom: 11.2px solid #c5a76c;
+
+          @include r.tab {
+               max-width: 30rem;
+          }
+     }
+
+     &__text {
+          padding: 1.3125rem 0;
+          text-align: center;
+          font-size: 1.625rem;
+          letter-spacing: 0.65px;
+          font-weight: bold;
+
+          @include r.sp {
+               font-size: 1.4375rem;
+          }
+     }
+
+     &__img {
+          width: 100%;
+
+          img {
+               height: 100%;
+          }
+     }
+}
+
+
+.processing-menu {
+     margin-top: 5.25rem;
+     background-color: #fff;
+     padding: 3.75rem 4rem 5.1875rem;
+
+     @include r.tab {
+          padding: 2.75rem 2rem 3.1875rem;
+
+     }
+
+     &__title {
+          text-align: center;
+     }
+
+     &__lists {
+          margin-top: 3.0625rem;
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          grid-template-rows: repeat(5, 1fr);
+          gap: 27px;
+          row-gap: 22px;
+
+          @include r.pc {
+               margin-top: 2.0625rem;
+               grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+          }
+     }
+
+     .grid-rows {
+          grid-template-rows: repeat(2, 1fr);
+
+     }
+
+     &__list {
+          padding-left: 1.3125rem;
+          padding-bottom: 0.5625rem;
+          color: #000;
+          font-weight: 500;
+          font-size: 1.25rem;
+          line-height: 1.4;
+          border-left: 4px solid #C5A76C;
+          border-bottom: 1px solid #C5A76C;
+
+          @include r.sp {
+               font-size: 1.125rem;
+          }
+
+     }
+}

@@ -1,0 +1,113 @@
+@use '../global/responsive'as r;
+
+
+.information {
+
+     &__container {
+          padding: 7.5rem 1.25rem;
+          overflow: hidden;
+          position: relative;
+          background-image: url("../img/information.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 100%;
+
+          &::before {
+               background-color: rgba(0, 0, 0, .1);
+               content: "";
+               position: absolute;
+               left: 0;
+               right: 0;
+               top: 0;
+               bottom: 0;
+               z-index: 1;
+
+          }
+
+
+          @include r.tab {
+               background-image: url("../img/information-sp.jpg");
+               padding: 4.3125rem 1.25rem 5.25rem;
+          }
+
+     }
+
+     &__inner {
+          position: relative;
+          z-index: 2;
+     }
+
+}
+
+.news {
+     padding: 2.75rem;
+     margin: 3.75rem auto 0;
+     background-color: #fff;
+     width: 100%;
+     max-width: 78.75rem;
+
+     @include r.tab {
+          padding: 0.625rem 0.75rem 2.3125rem;
+
+     }
+
+     &__list {
+          display: flex;
+          padding: 2.25rem;
+          border-bottom: 1px solid #c8c9ca;
+
+          @include r.tab {
+               padding: 1rem 0;
+               flex-direction: column;
+
+          }
+     }
+
+     &__day {
+          letter-spacing: 0.4px;
+          color: #9e9e9f;
+          font-weight: 400;
+          margin-right: 2.8125rem;
+
+     }
+
+     &__text {
+          letter-spacing: 0.4px;
+          color: #231815;
+          font-weight: 400;
+
+          @include r.sp {
+               margin-top: 0.5rem;
+               font-size: 0.9375rem;
+               line-height: 1.5;
+          }
+     }
+
+     &__btn {
+          margin: 2.6875rem auto 0;
+          text-align: center;
+          border: 1px solid #000;
+          width: 8.0625rem;
+
+          @include r.tab {
+               width: 7.0625rem;
+               margin-top: 1.875rem;
+          }
+
+          a {
+               display: inline-block;
+               padding: 0.75rem 0;
+
+               @include r.sp {
+                    padding: 0.625rem 0;
+               }
+
+          }
+
+          span {
+               color: #000;
+               text-transform: capitalize;
+               font-size: 1.125rem;
+          }
+     }
+}

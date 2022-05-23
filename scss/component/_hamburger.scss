@@ -1,0 +1,72 @@
+@use '../global/responsive'as r;
+
+
+.hamburger {
+     width: 3.5rem;
+     height: 3.3125rem;
+     position: relative;
+     border-radius: 2.7px;
+     border: solid 1.3px #fff;
+     margin-left: 0.75rem;
+     display: none;
+
+     @include r.tab {
+          display: block;
+     }
+
+     @include r.sp {
+          width: 2.5rem;
+          height: 2.3125rem;
+     }
+
+     &__bar {
+          position: absolute;
+          height: 4px;
+          width: 33px;
+          background-color: #fff;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: .2s;
+
+          @include r.sp {
+               height: 3px;
+               width: 30px;
+
+          }
+
+          &:nth-of-type(1) {
+               transform: translate(-50%, -10px);
+          }
+
+          &:nth-of-type(3) {
+               transform: translate(-50%, 10px);
+
+          }
+
+     }
+
+}
+
+/*ハンバーガーアイコンをクリックしたら発火*/
+.is-active {
+     z-index: 100;
+
+     .hamburger__bar:nth-of-type(1) {
+          transform: rotate(45deg) translate(-50%, 0);
+          transform-origin: 0 50%;
+
+
+     }
+
+     .hamburger__bar:nth-of-type(2) {
+          opacity: 0;
+     }
+
+
+     .hamburger__bar:nth-of-type(3) {
+          transform: rotate(-45deg) translate(-50%, 0);
+          transform-origin: 0 50%;
+     }
+
+}
